@@ -9,9 +9,11 @@
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #111; color: #eee; }
     header { background: #222; padding: 20px; text-align: center; }
     h1 { margin: 0; }
+    nav { background:#333; padding:10px; text-align:center; }
+    nav a { margin:0 15px; color:#4db8ff; text-decoration:none; }
     section { padding: 40px; max-width: 800px; margin: auto; }
     .project { margin-bottom: 20px; padding: 20px; background: #333; border-radius: 8px; }
-    a { color: #4db8ff; text-decoration: none; }
+    footer { background:#222; text-align:center; padding:15px; margin-top:40px; }
   </style>
 </head>
 <body>
@@ -20,7 +22,13 @@
     <h1>NoMercyLab Portfolio</h1>
     <p>Aspiring Computer Science Student | Tech Enthusiast</p>
   </header>
-  <section>
+
+  <nav>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="projects">
     <h2>Projects</h2>
     <div class="project">
       <h3>Calculator App</h3>
@@ -33,5 +41,15 @@
       <a href="https://github.com/NoMercyLab/student-database">View on GitHub</a>
     </div>
   </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:yourname@email.com">yourname@email.com</a></p>
+    <p>GitHub: <a href="https://github.com/NoMercyLab">NoMercyLab</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 NoMercyLab. All rights reserved.</p>
+  </footer>
 </body>
 </html>
