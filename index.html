@@ -5,56 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Official Portfolio of NoMercyLab</title>
   <style>
-    body { font-family: Georgia, serif; margin:0; padding:0; background:#f4f4f4; color:#222; }
-    header { background:#990000; color:#fff; padding:20px; text-align:center; }
-    header img { width:90px; border-radius:50%; border:3px solid #fff; }
-    nav { background:#cc0000; padding:10px; text-align:center; }
-    nav a { margin:0 20px; color:#fff; text-decoration:none; font-weight:bold; }
-    section { padding:40px; max-width:1000px; margin:auto; }
-    .project { background:#e6e6e6; padding:20px; margin-bottom:20px; border-left:5px solid #cc0000; }
-    footer { background:#990000; color:#fff; text-align:center; padding:15px; margin-top:40px; }
+    body { font-family: Georgia, serif; margin:0; padding:0; background:#111; color:#eee; display:flex; }
+    header { background:#000; color:#fff; width:250px; min-height:100vh; padding:20px; text-align:center; position:fixed; left:0; top:0; }
+    header img { width:100px; border-radius:50%; border:3px solid #fff; margin-bottom:15px; }
+    nav { margin-top:30px; }
+    nav a { display:block; margin:15px 0; color:#ccc; text-decoration:none; font-weight:bold; }
+    nav a:hover { color:#fff; }
+    main { margin-left:250px; padding:40px; flex:1; }
+    section { margin-bottom:40px; }
+    .project { background:#222; padding:20px; margin-bottom:20px; border-radius:8px; }
+    .project a { color:#4db8ff; text-decoration:none; }
+    footer { background:#000; color:#fff; text-align:center; padding:15px; margin-top:40px; }
   </style>
 </head>
 <body>
   <header>
     <img src="images/logo.png" alt="Official Logo">
-    <h1>Official Portfolio of NoMercyLab</h1>
-    <p>Computer Science Student | Technology Enthusiast</p>
+    <h1>NoMercyLab</h1>
+    <p>Computer Science Student<br>Technology Enthusiast</p>
+    <nav>
+      <a href="#profile">Profile</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#profile">Profile</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <main>
+    <section id="profile">
+      <h2>Profile</h2>
+      <p>This official portfolio showcases projects and achievements in the field of technology.</p>
+    </section>
 
-  <section id="profile">
-    <h2>Profile</h2>
-    <p>This official portfolio showcases projects and achievements in the field of technology.</p>
-  </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>Calculator App</h3>
+        <p>A simple calculator built using JavaScript.</p>
+        <a href="https://github.com/NoMercyLab/calculator-app">View on GitHub</a>
+      </div>
+      <div class="project">
+        <h3>Student Database</h3>
+        <p>A CRUD system for managing student records.</p>
+        <a href="https://github.com/NoMercyLab/student-database">View on GitHub</a>
+      </div>
+    </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>Calculator App</h3>
-      <p>A simple calculator built using JavaScript.</p>
-      <a href="https://github.com/NoMercyLab/calculator-app">View on GitHub</a>
-    </div>
-    <div class="project">
-      <h3>Student Database</h3>
-      <p>A CRUD system for managing student records.</p>
-      <a href="https://github.com/NoMercyLab/student-database">View on GitHub</a>
-    </div>
-  </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:irfanbinroslee@gmail.com">irfanbinroslee@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/NoMercyLab">NoMercyLab</a></p>
+    </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:irfanbinroslee@gmail.com">irfanbinroslee@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/NoMercyLab">NoMercyLab</a></p>
-  </section>
-
-  <footer>
-    <p>&copy; 2026 NoMercyLab. All Rights Reserved.</p>
-  </footer>
+    <footer>
+      <p>&copy; 2026 NoMercyLab. All Rights Reserved.</p>
+    </footer>
+  </main>
 </body>
 </html>
