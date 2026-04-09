@@ -102,6 +102,17 @@
     body.light .highlight {
       color:#1e90ff; /* biru terang untuk background putih */
     }
+    /* ✅ Fix resume text supaya jelas */
+    body.light .resume-item h3,
+    body.light .education-item h3,
+    body.light .project h3 {
+      color:#222;
+    }
+    body.light .resume-item p,
+    body.light .education-item p,
+    body.light .project p {
+      color:#333;
+    }
 
     /* Toggle Button */
     #toggle-theme {
@@ -170,7 +181,6 @@
         <span class="highlight">Portfolio Building</span>
       </p>
     </div>
-    <!-- Download Resume Button -->
     <a class="download-btn" href="resume.pdf" target="_blank">Download CV (PDF)</a>
   </section>
 
@@ -210,18 +220,4 @@
 
   <footer>
     © 2026 NoMercyLab | Built with ❤️ and Code
-  </footer>
-
-  <script>
-    const toggleBtn = document.getElementById('toggle-theme');
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('light');
-      if(document.body.classList.contains('light')){
-        toggleBtn.textContent = "☀️ Light";
-      } else {
-        toggleBtn.textContent = "🌙 Dark";
-      }
-    });
-  </script>
-</body>
-</html>
+ 
