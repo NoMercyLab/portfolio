@@ -9,14 +9,19 @@
       margin:0; padding:0; height:100%; width:100%;
       font-family: Arial, sans-serif; color:#fff; overflow:hidden;
     }
-    /* Background video */
-    #bg-video {
+    /* Background image with zoom animation */
+    #bg-image {
       position:fixed; right:0; bottom:0;
       min-width:100%; min-height:100%;
       object-fit:cover;
       z-index:-1;
+      animation: zoomIn 10s ease forwards;
     }
-    /* Overlay content */
+    @keyframes zoomIn {
+      from { transform: scale(1); }
+      to { transform: scale(1.2); }
+    }
+    /* Overlay buttons */
     .overlay {
       position:absolute; top:0; left:0;
       width:100%; height:100%;
@@ -46,7 +51,6 @@
     #left-panel { left:20px; }
     #right-panel { right:20px; }
 
-    /* Fade-in animation */
     @keyframes fadeIn {
       from { opacity:0; transform:translateY(-50%) scale(0.95); }
       to { opacity:1; transform:translateY(-50%) scale(1); }
@@ -54,22 +58,22 @@
   </style>
 </head>
 <body>
-  <!-- Background video -->
-  <video autoplay muted loop id="bg-video">
-    <source src="videos/building-zoom.mp4" type="video/mp4">
-    Your browser does not support HTML5 video.
-  </video>
+  <!-- Background image -->
+  <img src="images/building.jpg" id="bg-image" alt="Building Background">
 
   <!-- Overlay buttons -->
   <div class="overlay">
-    <button class="btn" onclick="togglePanel('left')">More Info (Left)</button>
-    <button class="btn" onclick="togglePanel('right')">More Info (Right)</button>
+    <button class="btn" onclick="togglePanel('left')">Projects</button>
+    <button class="btn" onclick="togglePanel('right')">More Info</button>
   </div>
 
   <!-- Info panels -->
   <div id="left-panel" class="info-panel">
-    <h2>About the Building</h2>
-    <p>This is an official government-style portfolio site with a premium dark theme.</p>
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>Calculator App</strong> – A simple calculator built with JavaScript.</li>
+      <li><strong>Student Database</strong> – CRUD system for managing student records.</li>
+    </ul>
   </div>
 
   <div id="right-panel" class="info-panel">
