@@ -10,7 +10,7 @@ header {
   padding: 100px 20px;
   color: #fff;
   background: linear-gradient(rgba(30,144,255,0.6), rgba(0,191,255,0.6)),
-              url("XGewxRFfD8pnxp2rFRL2X.jpeg") no-repeat center center;
+              url("image/header.jpg") no-repeat center center;
   background-size: cover;
   background-attachment: fixed; /* parallax effect */
   border-bottom: 2px solid #1e90ff;
