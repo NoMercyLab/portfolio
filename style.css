@@ -1,4 +1,36 @@
-body { font-family: Arial, sans-serif; background: #111; color: #eee; margin:0; }
-header { background:#222; padding:40px; text-align:center; }
-h1 { margin:0; }
-section { padding:20px; max-width:800px; margin:auto; }
+body {
+  font-family: Arial, sans-serif;
+  background: #111;   /* latar belakang gelap */
+  color: #eee;
+  margin: 0;
+}
+
+header {
+  text-align: center;
+  padding: 100px 20px;
+  color: #fff;
+  background: linear-gradient(rgba(30,144,255,0.6), rgba(0,191,255,0.6)),
+              url("XGewxRFfD8pnxp2rFRL2X.jpeg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed; /* parallax effect */
+  border-bottom: 2px solid #1e90ff;
+}
+
+h1 {
+  margin: 0;
+  font-size: 48px;
+}
+
+section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #222;              /* kotak gelap */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6); /* shadow bagi nampak kotak */
+}
+
+h2 {
+  color: #1e90ff;
+  margin-top: 0;
+}
