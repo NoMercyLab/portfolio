@@ -16,18 +16,20 @@
       object-fit:cover;
       z-index:-1;
       animation: zoomIn 10s ease forwards;
-      transition: filter 0.5s ease; /* smooth blur */
+      transition: filter 0.5s ease;
     }
     @keyframes zoomIn {
       from { transform: scale(1); }
       to { transform: scale(1.2); }
     }
+
     /* Overlay buttons */
     .overlay {
       position:absolute; top:0; left:0;
       width:100%; height:100%;
-      display:flex; justify-content:space-between; align-items:center;
+      display:flex; justify-content:space-evenly; align-items:center;
       padding:20px;
+      z-index:2;
     }
     .btn {
       flex:0 0 180px;
@@ -41,8 +43,15 @@
       transition:0.3s;
     }
     .btn:hover { background:#d4af37; color:#000; }
-    .btn-left { margin-left:40px; }
-    .btn-right { margin-right:40px; }
+
+    /* Dark overlay when panel open */
+    #dark-overlay {
+      position:fixed; top:0; left:0;
+      width:100%; height:100%;
+      background:rgba(0,0,0,0.5);
+      display:none;
+      z-index:1;
+    }
 
     /* Info panels */
     .info-panel {
@@ -52,6 +61,7 @@
       border:2px solid #d4af37;
       display:none;
       opacity:0;
+      z-index:3;
     }
     .info-panel h2 { margin-top:0; }
     .close-btn {
@@ -88,10 +98,13 @@
   <!-- Background image -->
   <img src="images/building.jpg" id="bg-image" alt="Building Background">
 
+  <!-- Dark overlay -->
+  <div id="dark-overlay"></div>
+
   <!-- Overlay buttons -->
   <div class="overlay">
-    <button class="btn btn-left" onclick="togglePanel('left')">Projects</button>
-    <button class="btn btn-right" onclick="togglePanel('right')">More Info</button>
+    <button class="btn" onclick="togglePanel('left')">Projects</button>
+    <button class="btn" onclick="togglePanel('right')">More Info</button>
   </div>
 
   <!-- Info panels -->
@@ -114,6 +127,8 @@
     function togglePanel(side) {
       const panel = document.getElementById(side+'-panel');
       const bg = document.getElementById('bg-image');
+      const overlay = document.getElementById('dark-overlay');
+
       if (panel.style.display === 'block') {
         if (side === 'left') {
           panel.style.animation = 'slideOutLeft 0.5s forwards';
@@ -122,7 +137,8 @@
         }
         setTimeout(() => { 
           panel.style.display = 'none'; 
-          bg.style.filter = 'blur(0px)'; // remove blur
+          bg.style.filter = 'blur(0px)';
+          overlay.style.display = 'none';
         }, 500);
       } else {
         panel.style.display = 'block';
@@ -131,7 +147,8 @@
         } else {
           panel.style.animation = 'slideInRight 0.5s forwards';
         }
-        bg.style.filter = 'blur(5px)'; // apply blur
+        bg.style.filter = 'blur(5px)';
+        overlay.style.display = 'block';
       }
     }
   </script>
