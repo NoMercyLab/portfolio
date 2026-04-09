@@ -7,65 +7,88 @@
   <style>
     body {
       margin:0; font-family: Arial, sans-serif;
-      background:#111; color:#eee;
-      transition: background 0.6s ease, color 0.6s ease;
+      background:#fdfdfd; color:#222;
     }
-    header, nav, section, footer {
-      transition: background 0.6s ease, color 0.6s ease, border-color 0.6s ease;
-    }
-
     header {
       text-align:center; padding:50px 20px;
-      background:#000; border-bottom:2px solid #bdc3c7;
+      background: linear-gradient(90deg, #1e90ff, #00bfff);
+      border-bottom:2px solid #1e90ff;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease-in-out;
     }
-    header h1 { color:#bdc3c7; margin:0; transition: color 0.6s ease; }
-    header p { font-size:18px; margin-top:10px; }
+    header h1 { color:#fff; margin:0; }
+    header p { font-size:18px; margin-top:10px; color:#f0f8ff; }
 
     nav {
       display:flex; justify-content:center; gap:20px;
-      background:#222; padding:15px;
+      background:#f0f8ff; padding:15px;
       flex-wrap:wrap;
+      box-shadow:0 2px 6px rgba(0,0,0,0.08);
+      animation: fadeIn 1.2s ease-in-out;
     }
     nav a {
-      color:#bdc3c7; text-decoration:none;
-      font-weight:bold; border:1px solid #bdc3c7;
-      padding:8px 15px; transition:0.3s;
+      color:#1e90ff; text-decoration:none;
+      font-weight:bold; border:1px solid #1e90ff;
+      padding:8px 15px; border-radius:5px;
+      transition:0.4s;
     }
-    nav a:hover { background:#bdc3c7; color:#000; }
+    nav a:hover {
+      color:#fff;
+      background: linear-gradient(90deg, #1e90ff, #00bfff);
+      border-color:#00bfff;
+      box-shadow:0 4px 8px rgba(0,0,0,0.15);
+    }
 
     section {
       max-width:900px; margin:40px auto; padding:20px;
-      background:#1a1a1a; border:1px solid #333;
+      background:#ffffff; border:1px solid #ddd;
       border-radius:8px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+      animation: fadeIn 1.5s ease-in-out;
     }
-    section h2 { color:#bdc3c7; margin-bottom:15px; transition: color 0.6s ease; }
+    section h2 { color:#1e90ff; margin-bottom:15px; }
     .project, .resume-item, .education-item {
       margin-bottom:20px; padding:15px;
-      background:#222; border-radius:6px;
+      background:#f0f8ff; border-radius:6px;
+      box-shadow:0 3px 8px rgba(0,0,0,0.1);
+      transition:0.3s;
+      animation: fadeIn 1.8s ease-in-out;
     }
-    .project h3, .resume-item h3, .education-item h3 { margin:0; color:#eee; }
-    .project p, .resume-item p, .education-item p { margin-top:8px; font-size:14px; }
+    .project:hover, .resume-item:hover, .education-item:hover {
+      transform:translateY(-3px);
+      box-shadow:0 6px 14px rgba(0,0,0,0.15);
+    }
+    .project h3, .resume-item h3, .education-item h3 { margin:0; color:#222; }
+    .project p, .resume-item p, .education-item p { margin-top:8px; font-size:14px; color:#333; }
 
     .download-btn {
       display:inline-block;
       margin-top:15px;
       padding:10px 20px;
-      background:#bdc3c7; color:#000;
+      background:#1e90ff; color:#fff;
       font-weight:bold; text-decoration:none;
       border-radius:5px;
-      transition:0.3s;
+      transition:0.4s;
+      box-shadow:0 3px 8px rgba(0,0,0,0.1);
+      animation: fadeIn 2s ease-in-out;
     }
-    .download-btn:hover { background:#fff; color:#000; }
+    .download-btn:hover {
+      background: linear-gradient(90deg, #1e90ff, #00bfff);
+      box-shadow:0 6px 14px rgba(0,0,0,0.15);
+      transform:translateY(-2px);
+    }
 
     footer {
       text-align:center; padding:20px;
-      background:#000; border-top:2px solid #bdc3c7;
-      font-size:14px; color:#aaa;
+      background:#f0f8ff; border-top:2px solid #1e90ff;
+      font-size:14px; color:#555;
+      box-shadow:0 -2px 6px rgba(0,0,0,0.08);
+      animation: fadeIn 2.2s ease-in-out;
     }
 
     /* Highlight class */
     .highlight {
-      color:#3498db; /* biru lembut */
+      color:#1e90ff;
       font-weight:bold;
       transition:0.3s;
     }
@@ -74,61 +97,14 @@
       cursor:pointer;
     }
 
-    /* Light Theme */
-    body.light {
-      background:#f5f5f5; color:#222;
+    /* Animasi Fade-in */
+    @keyframes fadeIn {
+      from { opacity:0; transform:translateY(20px); }
+      to { opacity:1; transform:translateY(0); }
     }
-    body.light header {
-      background:#fff; border-bottom:2px solid #999;
-    }
-    body.light header h1 { color:#333; }
-    body.light nav { background:#eee; }
-    body.light nav a {
-      color:#333; border:1px solid #333;
-    }
-    body.light nav a:hover { background:#333; color:#fff; }
-    body.light section { background:#fff; }
-    body.light section h2 { color:#333; }
-    body.light .project, body.light .resume-item, body.light .education-item {
-      background:#f0f0f0;
-    }
-    body.light .download-btn {
-      background:#333; color:#fff;
-    }
-    body.light .download-btn:hover { background:#555; }
-    body.light footer {
-      background:#fff; border-top:2px solid #999; color:#555;
-    }
-    body.light .highlight {
-      color:#1e90ff; /* biru terang untuk background putih */
-    }
-    /* ✅ Fix supaya teks jelas dalam light mode */
-    body.light .resume-item h3,
-    body.light .education-item h3,
-    body.light .project h3 {
-      color:#222;
-    }
-    body.light .resume-item p,
-    body.light .education-item p,
-    body.light .project p {
-      color:#333;
-    }
-
-    /* Toggle Button */
-    #toggle-theme {
-      position:absolute; top:15px; right:15px;
-      padding:8px 12px;
-      background:#bdc3c7; color:#000;
-      border:none; border-radius:5px;
-      cursor:pointer; font-weight:bold;
-      transition:0.3s;
-    }
-    #toggle-theme:hover { background:#fff; }
   </style>
 </head>
 <body>
-  <button id="toggle-theme">🌙 Dark</button>
-
   <header>
     <h1>NoMercyLab</h1>
     <p>Computer Science Student | Portfolio</p>
@@ -221,7 +197,5 @@
   <footer>
     © 2026 NoMercyLab | Built with ❤️ and Code
   </footer>
-
-  <script>
-    const toggleBtn = document.getElementById('toggle-theme');
-    toggleBtn.addEventListener('click',
+</body>
+</html>
