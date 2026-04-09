@@ -28,6 +28,12 @@ section {
   background: #222;              /* kotak gelap */
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.6); /* shadow bagi nampak kotak */
+  transition: 0.3s;              /* animasi smooth */
+}
+
+section:hover {
+  transform: translateY(-5px);   /* kotak naik sikit bila hover */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.8);
 }
 
 h2 {
