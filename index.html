@@ -29,10 +29,10 @@
       padding:20px;
     }
     .btn {
-      flex:0 0 180px; /* semua butang lebar sama */
+      flex:0 0 180px;
       text-align:center;
       background:rgba(0,0,0,0.6);
-      border:2px solid #d4af37; /* gold border */
+      border:2px solid #d4af37;
       color:#d4af37;
       padding:15px;
       cursor:pointer;
@@ -48,14 +48,35 @@
       border:2px solid #d4af37;
       display:none;
       opacity:0;
-      animation: fadeIn 0.5s forwards;
     }
-    #left-panel { left:20px; }
-    #right-panel { right:20px; }
+    .info-panel h2 { margin-top:0; }
+    .close-btn {
+      float:right;
+      background:none;
+      border:none;
+      color:#d4af37;
+      font-size:20px;
+      cursor:pointer;
+    }
+    #left-panel { left:-350px; }   /* start off-screen left */
+    #right-panel { right:-350px; } /* start off-screen right */
 
-    @keyframes fadeIn {
-      from { opacity:0; transform:translateY(-50%) scale(0.95); }
-      to { opacity:1; transform:translateY(-50%) scale(1); }
+    /* Animations */
+    @keyframes slideInLeft {
+      from { left:-350px; opacity:0; }
+      to { left:20px; opacity:1; }
+    }
+    @keyframes slideInRight {
+      from { right:-350px; opacity:0; }
+      to { right:20px; opacity:1; }
+    }
+    @keyframes slideOutLeft {
+      from { left:20px; opacity:1; }
+      to { left:-350px; opacity:0; }
+    }
+    @keyframes slideOutRight {
+      from { right:20px; opacity:1; }
+      to { right:-350px; opacity:0; }
     }
   </style>
 </head>
@@ -71,6 +92,7 @@
 
   <!-- Info panels -->
   <div id="left-panel" class="info-panel">
+    <button class="close-btn" onclick="togglePanel('left')">✖</button>
     <h2>Projects</h2>
     <ul>
       <li><strong>Calculator App</strong> – A simple calculator built with JavaScript.</li>
@@ -79,6 +101,7 @@
   </div>
 
   <div id="right-panel" class="info-panel">
+    <button class="close-btn" onclick="togglePanel('right')">✖</button>
     <h2>About NoMercyLab</h2>
     <p>Computer Science student, technology enthusiast, and creator of modern web projects.</p>
   </div>
@@ -87,10 +110,19 @@
     function togglePanel(side) {
       const panel = document.getElementById(side+'-panel');
       if (panel.style.display === 'block') {
-        panel.style.display = 'none';
+        if (side === 'left') {
+          panel.style.animation = 'slideOutLeft 0.5s forwards';
+        } else {
+          panel.style.animation = 'slideOutRight 0.5s forwards';
+        }
+        setTimeout(() => { panel.style.display = 'none'; }, 500);
       } else {
         panel.style.display = 'block';
-        panel.style.animation = 'fadeIn 0.5s forwards';
+        if (side === 'left') {
+          panel.style.animation = 'slideInLeft 0.5s forwards';
+        } else {
+          panel.style.animation = 'slideInRight 0.5s forwards';
+        }
       }
     }
   </script>
