@@ -16,6 +16,7 @@
       object-fit:cover;
       z-index:-1;
       animation: zoomIn 10s ease forwards;
+      transition: filter 0.5s ease; /* smooth blur */
     }
     @keyframes zoomIn {
       from { transform: scale(1); }
@@ -40,6 +41,9 @@
       transition:0.3s;
     }
     .btn:hover { background:#d4af37; color:#000; }
+    .btn-left { margin-left:40px; }
+    .btn-right { margin-right:40px; }
+
     /* Info panels */
     .info-panel {
       position:absolute; top:50%; transform:translateY(-50%);
@@ -58,8 +62,8 @@
       font-size:20px;
       cursor:pointer;
     }
-    #left-panel { left:-350px; }   /* start off-screen left */
-    #right-panel { right:-350px; } /* start off-screen right */
+    #left-panel { left:-350px; }
+    #right-panel { right:-350px; }
 
     /* Animations */
     @keyframes slideInLeft {
@@ -86,8 +90,8 @@
 
   <!-- Overlay buttons -->
   <div class="overlay">
-    <button class="btn" onclick="togglePanel('left')">Projects</button>
-    <button class="btn" onclick="togglePanel('right')">More Info</button>
+    <button class="btn btn-left" onclick="togglePanel('left')">Projects</button>
+    <button class="btn btn-right" onclick="togglePanel('right')">More Info</button>
   </div>
 
   <!-- Info panels -->
@@ -109,13 +113,17 @@
   <script>
     function togglePanel(side) {
       const panel = document.getElementById(side+'-panel');
+      const bg = document.getElementById('bg-image');
       if (panel.style.display === 'block') {
         if (side === 'left') {
           panel.style.animation = 'slideOutLeft 0.5s forwards';
         } else {
           panel.style.animation = 'slideOutRight 0.5s forwards';
         }
-        setTimeout(() => { panel.style.display = 'none'; }, 500);
+        setTimeout(() => { 
+          panel.style.display = 'none'; 
+          bg.style.filter = 'blur(0px)'; // remove blur
+        }, 500);
       } else {
         panel.style.display = 'block';
         if (side === 'left') {
@@ -123,6 +131,7 @@
         } else {
           panel.style.animation = 'slideInRight 0.5s forwards';
         }
+        bg.style.filter = 'blur(5px)'; // apply blur
       }
     }
   </script>
