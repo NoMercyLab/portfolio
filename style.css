@@ -1,42 +1,111 @@
+/* Global */
 body {
   font-family: Arial, sans-serif;
-  background: #111;   /* latar belakang gelap */
+  background: #111;
   color: #eee;
   margin: 0;
 }
 
+/* Navigation */
+nav {
+  background: #000;
+  padding: 15px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  color: #1e90ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a:hover {
+  color: #fff;
+}
+
+/* Header */
 header {
   text-align: center;
-  padding: 100px 20px;
+  padding: 150px 20px 100px;
   color: #fff;
   background: linear-gradient(rgba(30,144,255,0.6), rgba(0,191,255,0.6)),
               url("image/header.jpg") no-repeat center center;
   background-size: cover;
-  background-attachment: fixed; /* parallax effect */
+  background-attachment: fixed;
   border-bottom: 2px solid #1e90ff;
 }
-
-h1 {
+header h1 {
+  font-size: 56px;
   margin: 0;
-  font-size: 48px;
+}
+header p {
+  font-size: 20px;
+  margin-top: 10px;
 }
 
+/* Sections */
 section {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 20px;
-  background: #222;              /* kotak gelap */
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.6); /* shadow bagi nampak kotak */
-  transition: 0.3s;              /* animasi smooth */
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 30px;
+  background: #222;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  transition: 0.3s;
 }
-
 section:hover {
-  transform: translateY(-5px);   /* kotak naik sikit bila hover */
-  box-shadow: 0 8px 16px rgba(0,0,0,0.8);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.8);
 }
-
 h2 {
   color: #1e90ff;
   margin-top: 0;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.card {
+  flex: 1;
+  min-width: 250px;
+  background: #333;
+  padding: 20px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.card:hover {
+  background: #1e90ff;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Timeline */
+.timeline {
+  list-style: none;
+  padding: 0;
+}
+.timeline li {
+  margin: 10px 0;
+  padding: 10px;
+  border-left: 3px solid #1e90ff;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  border-top: 2px solid #1e90ff;
 }
