@@ -63,6 +63,17 @@
       font-size:14px; color:#aaa;
     }
 
+    /* Highlight class */
+    .highlight {
+      color:#3498db; /* biru lembut */
+      font-weight:bold;
+      transition:0.3s;
+    }
+    .highlight:hover {
+      text-decoration:underline;
+      cursor:pointer;
+    }
+
     /* Light Theme */
     body.light {
       background:#f5f5f5; color:#222;
@@ -87,6 +98,9 @@
     body.light .download-btn:hover { background:#555; }
     body.light footer {
       background:#fff; border-top:2px solid #999; color:#555;
+    }
+    body.light .highlight {
+      color:#1e90ff; /* biru terang untuk background putih */
     }
 
     /* Toggle Button */
@@ -128,23 +142,40 @@
   <section id="resume">
     <h2>Resume</h2>
     <div class="resume-item">
-      <h3>Programming Languages</h3>
-      <p>Python, Java, C++, JavaScript, HTML, CSS</p>
+      <h3>💻 Programming Languages</h3>
+      <p>
+        <span class="highlight">Python</span>, 
+        <span class="highlight">Java</span>, 
+        <span class="highlight">C++</span>, 
+        <span class="highlight">JavaScript</span>, 
+        <span class="highlight">HTML</span>, 
+        <span class="highlight">CSS</span>
+      </p>
     </div>
     <div class="resume-item">
-      <h3>Tools & Frameworks</h3>
-      <p>GitHub, MySQL, React (beginner), Node.js (beginner)</p>
+      <h3>⚙️ Tools & Frameworks</h3>
+      <p>
+        <span class="highlight">GitHub</span>, 
+        <span class="highlight">MySQL</span>, 
+        <span class="highlight">React</span> (beginner), 
+        <span class="highlight">Node.js</span> (beginner)
+      </p>
     </div>
     <div class="resume-item">
-      <h3>Skills</h3>
-      <p>Problem-solving, Web Development, Database Management, Portfolio Building</p>
+      <h3>⭐ Skills</h3>
+      <p>
+        <span class="highlight">Problem-solving</span>, 
+        <span class="highlight">Web Development</span>, 
+        <span class="highlight">Database Management</span>, 
+        <span class="highlight">Portfolio Building</span>
+      </p>
     </div>
     <!-- Download Resume Button -->
     <a class="download-btn" href="resume.pdf" target="_blank">Download CV (PDF)</a>
   </section>
 
   <section id="education">
-    <h2>Education</h2>
+    <h2>🎓 Education</h2>
     <div class="education-item">
       <h3>Diploma in Computer Science</h3>
       <p>Kolej Profesional MARA, Malaysia (2026 – 2029)</p>
@@ -156,7 +187,7 @@
   </section>
 
   <section id="projects">
-    <h2>Projects</h2>
+    <h2>📂 Projects</h2>
     <div class="project">
       <h3>Calculator App</h3>
       <p>A simple calculator built with HTML, CSS, and JavaScript.</p>
@@ -172,9 +203,9 @@
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:irfanbinroslee@gmail.com">irfanbinroslee@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/nomercylab" target="_blank">github.com/nomercylab</a></p>
+    <h2>📞 Contact</h2>
+    <p>📧 Email: <a href="mailto:irfanbinroslee@gmail.com">irfanbinroslee@gmail.com</a></p>
+    <p>🐙 GitHub: <a href="https://github.com/nomercylab" target="_blank">github.com/nomercylab</a></p>
   </section>
 
   <footer>
