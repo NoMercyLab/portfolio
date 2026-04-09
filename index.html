@@ -102,7 +102,7 @@
     body.light .highlight {
       color:#1e90ff; /* biru terang untuk background putih */
     }
-    /* ✅ Fix resume text supaya jelas */
+    /* ✅ Fix supaya teks jelas dalam light mode */
     body.light .resume-item h3,
     body.light .education-item h3,
     body.light .project h3 {
@@ -223,4 +223,5 @@
   </footer>
 
   <script>
-    const toggleBtn = document.getElementById('
+    const toggleBtn = document.getElementById('toggle-theme');
+    toggleBtn.addEventListener('click',
